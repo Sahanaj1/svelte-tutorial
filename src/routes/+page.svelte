@@ -26,13 +26,14 @@
 </script>
 
 
+<Header name={formState.name}/>
 
 {#if formState.error!==""}
 <p style="color:red;">{formState.error}</p>
 {/if}
+<h1>Step: {formState.step}</h1>
 <main>
     {#if formState.step==0}
-    <h1>{formState.step}</h1>
     <form>
         <label for="name">Name:</label>
         <input type="text" id="name" bind:value={formState.name}/>
@@ -47,7 +48,6 @@
         }}>next</button>
     </form>
     {:else if formState.step==1}
-    <h1>{formState.step}</h1>
     <form>
         <label for="birthday">Birthday:</label>
         <input type="date" id="birthday" bind:value={formState.birthday}/>

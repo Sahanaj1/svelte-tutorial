@@ -1,6 +1,8 @@
-<script>
-    let {name} = $props();
+<script lang="ts">
+    let {name,fake_name}:{
+        name:string,
+        fake_name?:string | null
+    } = $props();
 </script>
 
-<h1>Header</h1>
-<h2>props: {name}</h2>
+<h2>Hello {name}</h2>
